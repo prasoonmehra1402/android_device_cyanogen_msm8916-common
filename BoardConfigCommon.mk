@@ -15,3 +15,8 @@
 
 # Include board config fragments
 include device/cyanogen/msm8916-common/board/*.mk
+
+# Build with uber
+ifeq ($(UBER_TC),true)
+include $(LOCAL_PATH)/misc/uber.mk
+endif
