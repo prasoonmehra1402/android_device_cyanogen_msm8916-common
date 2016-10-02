@@ -50,6 +50,12 @@ on fs
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
 
+# Configure UKSM
+    chown root system /sys/kernel/mm/uksm/sleep_millisecs
+    chmod 0664 /sys/kernel/mm/uksm/sleep_millisecs
+    write /sys/kernel/mm/uksm/run 1
+    write /sys/kernel/mm/uksm/sleep_millisecs 500
+
 # msm specific files that need to be created on /data
 on post-fs-data
 
