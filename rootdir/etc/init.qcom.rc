@@ -352,6 +352,7 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     class core
     user root
     group root
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /system/bin/netmgrd
@@ -559,12 +560,3 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
-<<<<<<< HEAD:rootdir/etc/init.qcom.rc
-=======
-
-service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    class core
-    user root
-    group root
-    writepid /dev/cpuset/system-background/tasks
->>>>>>> 369ad6c... Disable cluster plug, enable core_ctl.:rootdir/etc/init.qcom-common.rc
